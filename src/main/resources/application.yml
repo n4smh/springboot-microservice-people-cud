@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: app_people_cud
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: jdbc:mysql://localhost:3306/n4smh_org
+    username: nagesh
+    password: asdf1234
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  otlp:
+    metrics:
+      export:
+        url: http://localhost:4318/v1/metrics
+  opentelemetry:
+    tracing:
+      export:
+        otlp:
+          endpoint: http://localhost:4318/v1/traces
+    logging:
+      export:
+        otlp:
+          endpoint: http://localhost:4318/v1/logs
+
+
+logging:
+  pattern:
+    #console: "%d ${spring.application.name} [ %X{traceId} %X{userId} ] %level - %-36logger{36} : %msg%n"
+    correlation: "[ %X{traceId:-} %X{spanId:-} ] "
+  #include-application-name: false
+
+
+springdoc:
+  swagger-ui:
+    path: '/swagger-ui.html'
+  show-actuator: true
