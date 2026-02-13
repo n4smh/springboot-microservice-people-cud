@@ -1,4 +1,4 @@
-package in.n4smh.microservices.people_cud.exception;
+package in.n4smh.microservices.person_cud.exception;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import in.n4smh.microservices.people_cud.config.TraceIdFilter;
+import in.n4smh.microservices.person_cud.config.TraceIdFilter;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2

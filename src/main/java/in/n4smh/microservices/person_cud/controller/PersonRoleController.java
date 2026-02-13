@@ -1,4 +1,4 @@
-package in.n4smh.microservices.people_cud.controller;
+package in.n4smh.microservices.person_cud.controller;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import in.n4smh.microservices.people_shared.dto.model.PersonRole;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import in.n4smh.microservices.people_cud.config.TraceIdFilter;
-import in.n4smh.microservices.people_cud.service.IPersonRoleService;
-import in.n4smh.microservices.people_cud.shared.ApiResponseBody;
+import in.n4smh.microservices.person_cud.config.TraceIdFilter;
+import in.n4smh.microservices.person_cud.service.IPersonRoleService;
+import in.n4smh.microservices.person_cud.shared.ApiResponseBody;
+import in.n4smh.microservices.person_shared.dto.model.PersonRole;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

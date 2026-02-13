@@ -1,4 +1,4 @@
-package in.n4smh.microservices.people_cud.shared;
+package in.n4smh.microservices.person_cud.shared;
 
 import lombok.Builder;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package in.n4smh.microservices.people_cud.repo;
+package in.n4smh.microservices.person_cud.repo;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.NativeQuery;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
-import in.n4smh.microservices.people_shared.entity.RoleEntity;
+import in.n4smh.microservices.person_shared.entity.RoleEntity;
 
 public interface RoleRepo extends CrudRepository<RoleEntity, String> {
 	

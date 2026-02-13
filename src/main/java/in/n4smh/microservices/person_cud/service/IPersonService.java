@@ -1,6 +1,6 @@
-package in.n4smh.microservices.people_cud.service;
+package in.n4smh.microservices.person_cud.service;
 
-import in.n4smh.microservices.people_shared.dto.model.Person;
+import in.n4smh.microservices.person_shared.dto.model.Person;
 
 public interface IPersonService {
 

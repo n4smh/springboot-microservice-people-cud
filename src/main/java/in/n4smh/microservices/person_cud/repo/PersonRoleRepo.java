@@ -1,4 +1,4 @@
-package in.n4smh.microservices.people_cud.repo;
+package in.n4smh.microservices.person_cud.repo;
 
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.NativeQuery;
@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import in.n4smh.microservices.people_shared.entity.PersonRoleEntity;
+import in.n4smh.microservices.person_shared.entity.PersonRoleEntity;
 
 @Repository
 public interface PersonRoleRepo extends CrudRepository<PersonRoleEntity, String> {

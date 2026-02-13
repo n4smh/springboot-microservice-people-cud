@@ -1,4 +1,4 @@
-package in.n4smh.microservices.people_cud.service;
+package in.n4smh.microservices.person_cud.service;
 
 import java.util.List;
 

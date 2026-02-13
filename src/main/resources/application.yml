@@ -1,6 +1,6 @@
 spring:
   application:
-    name: app_people_cud
+    name: app_person_cud
   jpa:
     database: mysql
     show-sql: true
@@ -28,6 +28,12 @@ management:
       export:
         otlp:
           endpoint: http://localhost:4318/v1/logs
+  endpoints:
+    web:
+      exposure:
+        include:
+        - info
+        - health
 
 
 logging:

@@ -1,4 +1,4 @@
-package in.n4smh.microservices.people_cud.config;
+package in.n4smh.microservices.person_cud.config;
 
 import org.springframework.boot.jackson.autoconfigure.JsonMapperBuilderCustomizer;
 import org.springframework.context.annotation.Bean;

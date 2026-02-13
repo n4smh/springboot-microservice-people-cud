@@ -1,4 +1,4 @@
-package in.n4smh.microservices.people_cud.service;
+package in.n4smh.microservices.person_cud.service;
 
 import java.util.List;
 
@@ -6,13 +6,13 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
-import in.n4smh.microservices.people_cud.repo.PersonRoleRepo;
-import in.n4smh.microservices.people_cud.repo.RoleRepo;
-import in.n4smh.microservices.people_shared.dto.model.PersonRole;
-import in.n4smh.microservices.people_shared.dto.model.Role;
-import in.n4smh.microservices.people_shared.entity.PersonRoleEntity;
-import in.n4smh.microservices.people_shared.entity.RoleEntity;
-import in.n4smh.microservices.people_shared.mapper.IRoleMapper;
+import in.n4smh.microservices.person_cud.repo.PersonRoleRepo;
+import in.n4smh.microservices.person_cud.repo.RoleRepo;
+import in.n4smh.microservices.person_shared.dto.model.PersonRole;
+import in.n4smh.microservices.person_shared.dto.model.Role;
+import in.n4smh.microservices.person_shared.entity.PersonRoleEntity;
+import in.n4smh.microservices.person_shared.entity.RoleEntity;
+import in.n4smh.microservices.person_shared.mapper.IRoleMapper;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
