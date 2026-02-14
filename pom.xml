@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>in.n4smh.microservices</groupId>
 		<artifactId>parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.2-SNAPSHOT</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
@@ -78,6 +78,19 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<image>
+						<name>${nexus-docker-path}${project.artifactId}:${project.version}</name>
+						<publish>true</publish>
+					</image>
+					<docker>
+						<builderRegistry>
+							<username>${nexus-ci-user}</username>
+							<password>${nexus-ci-password}</password>
+							<url>${nexus-docker-host}</url>
+						</builderRegistry>
+					</docker>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
