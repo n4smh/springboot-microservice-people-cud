@@ -1,6 +1,6 @@
 spring:
   application:
-    name: app_person_cud
+    name: PersonCUDAPIs
   jpa:
     database: mysql
     show-sql: true
@@ -10,6 +10,13 @@ spring:
     url: jdbc:mysql://localhost:3306/n4smh_org
     username: nagesh
     password: asdf1234
+  security:
+    user:
+      name: user_person_cud
+      password: asdf1234
+
+server:
+  port: 8091
 
 management:
   tracing:
@@ -35,15 +42,18 @@ management:
         - info
         - health
 
-
 logging:
   pattern:
     #console: "%d ${spring.application.name} [ %X{traceId} %X{userId} ] %level - %-36logger{36} : %msg%n"
     correlation: "[ %X{traceId:-} %X{spanId:-} ] "
   #include-application-name: false
 
-
 springdoc:
+  show-actuator: true
   swagger-ui:
     path: '/swagger-ui.html'
-  show-actuator: true
+
+downstream:
+  swagger-central:
+    server:
+      uri: http://localhost:8090 

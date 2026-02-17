@@ -6,14 +6,15 @@
 
 	<parent>
 		<groupId>in.n4smh.microservices</groupId>
-		<artifactId>parent</artifactId>
-		<version>0.0.2-SNAPSHOT</version>
+		<artifactId>parent-pom</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-
-	<artifactId>person-cud</artifactId>
+	
+	<groupId>in.n4smh.microservices.person</groupId>
+	<artifactId>cud</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Person CUD APIs</name>
+	<name>PersonCUDAPIs</name>
 	<description>APIs to create, update &amp; delete person related details</description>
 
 	<properties>
@@ -32,6 +33,13 @@
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- Start: Spring Security -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<!-- End -->
 
 		<!-- Start: JPA and MySql connector -->
 		<dependency>
@@ -66,8 +74,8 @@
 
 		<!-- Start: Shared dependencies-->
 		<dependency>
-			<groupId>in.n4smh.microservices</groupId>
-			<artifactId>person-shared</artifactId>
+			<groupId>in.n4smh.microservices.person</groupId>
+			<artifactId>shared</artifactId>
 			<version>${person-shared.version}</version>
 		</dependency>
 		<!-- End -->
