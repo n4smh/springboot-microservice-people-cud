@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @EnableJpaRepositories
-@SpringBootApplication(scanBasePackages = "in.n4smh.microservices")
+@SpringBootApplication(scanBasePackages = "in.n4smh.microservices.person")
 public class PersonCudApplication {
 
 	public static void main(String[] args) {

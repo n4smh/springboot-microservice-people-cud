@@ -1,0 +1,22 @@
+person:
+  swagger-enabled: true
+  swagger-central-uri: http://localhost:8090
+  logging-pattern-correlation: "[ %X{traceId:-} %X{spanId:-} ] "
+
+  otlp-metrics-uri: http://localhost:4318/v1/metrics
+  otlp-logging-uri: http://localhost:4318/v1/logs
+  otlp-tracing-uri: http://localhost:4318/v1/traces
+  otlp-tracing-sampling-probability: 1.0
+  
+  cud:
+    name: PersonCUDAPIs
+    port: 8091
+    security-user-name: user_person_staging
+    security-user-password: staging1234
+
+    db:
+      uri: jdbc:mysql://localhost:3306/n4smh_org
+      database: mysql
+      username: user_db_staging
+      password: staging1234
+      show-sql: true  

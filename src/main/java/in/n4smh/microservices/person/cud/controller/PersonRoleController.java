@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
-import in.n4smh.microservices.person.cud.config.TraceIdFilter;
 import in.n4smh.microservices.person.cud.service.IPersonRoleService;
-import in.n4smh.microservices.person.cud.shared.ApiResponseBody;
+import in.n4smh.microservices.person.parent_webmvc.config.TraceIdFilter;
+import in.n4smh.microservices.person.shared.api.model.ApiResponseBody;
 import in.n4smh.microservices.person.shared.dto.model.PersonRole;
 import lombok.extern.slf4j.Slf4j;
 

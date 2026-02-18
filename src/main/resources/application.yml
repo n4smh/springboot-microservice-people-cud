@@ -1,40 +1,39 @@
 spring:
   application:
-    name: PersonCUDAPIs
+    name: ${person.cud.name}
+
+  security:
+    user:
+      name: ${person.cud.security-user-name}
+      password: ${person.cud.security-user-password}
+
   jpa:
-    database: mysql
-    show-sql: true
+    database: ${person.cud.db.database}
+    show-sql: ${person.cud.db.show-sql}
     hibernate:
       ddl-auto: none
   datasource:
-    url: jdbc:mysql://localhost:3306/n4smh_org
-    username: nagesh
-    password: asdf1234
-  security:
-    user:
-      name: user_person_cud
-      password: asdf1234
-
-server:
-  port: 8091
+    url: ${person.cud.db.uri}
+    username: ${person.cud.db.username}
+    password: ${person.cud.db.password}
 
 management:
   tracing:
     sampling:
-      probability: 1.0
+      probability: ${person.otlp-tracing-sampling-probability}
   otlp:
     metrics:
       export:
-        url: http://localhost:4318/v1/metrics
+        url: ${person.otlp-metrics-uri}
   opentelemetry:
     tracing:
       export:
         otlp:
-          endpoint: http://localhost:4318/v1/traces
+          endpoint: ${person.otlp-tracing-uri}
     logging:
       export:
         otlp:
-          endpoint: http://localhost:4318/v1/logs
+          endpoint: ${person.otlp-logging-uri}
   endpoints:
     web:
       exposure:
@@ -44,16 +43,14 @@ management:
 
 logging:
   pattern:
-    #console: "%d ${spring.application.name} [ %X{traceId} %X{userId} ] %level - %-36logger{36} : %msg%n"
-    correlation: "[ %X{traceId:-} %X{spanId:-} ] "
-  #include-application-name: false
+    correlation: ${person.logging-pattern-correlation}
 
 springdoc:
   show-actuator: true
   swagger-ui:
-    path: '/swagger-ui.html'
+    enabled: ${person.swagger-enabled}
+  api-docs:
+    enabled: ${person.swagger-enabled}
 
-downstream:
-  swagger-central:
-    server:
-      uri: http://localhost:8090 
+server:
+  port: ${person.cud.port}

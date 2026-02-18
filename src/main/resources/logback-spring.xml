@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+
 	<include
 		resource="org/springframework/boot/logging/logback/base.xml" />
 
 	<appender name="OTEL"
-		class="io.opentelemetry.instrumentation.logback.appender.v1_0.OpenTelemetryAppender">
-	</appender>
-
-	<logger name="in.n4smh.microservices.person" additivity="false"
-		level="DEBUG">
-		<appender-ref ref="CONSOLE" />
-		<appender-ref ref="OTEL" />
-	</logger>
+		class="io.opentelemetry.instrumentation.logback.appender.v1_0.OpenTelemetryAppender" />
 
 	<root level="INFO">
 		<appender-ref ref="CONSOLE" />
 		<appender-ref ref="OTEL" />
 	</root>
+	
+	<springProfile name="staging,unit-test,integration-test">
+		<logger name="in.n4smh.microservices.person" additivity="false" level="DEBUG">
+			<appender-ref ref="CONSOLE" />
+			<appender-ref ref="OTEL" />
+		</logger>
+	</springProfile>
+
+	<springProfile name="prod">
+		<logger name="in.n4smh.microservices.person" additivity="false" level="INFO">
+			<appender-ref ref="CONSOLE" />
+			<appender-ref ref="OTEL" />
+		</logger>
+	</springProfile>
+
 </configuration>

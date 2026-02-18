@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import in.n4smh.microservices.person.cud.config.TraceIdFilter;
+import in.n4smh.microservices.person.parent_webmvc.config.TraceIdFilter;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
